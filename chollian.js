@@ -14,3 +14,26 @@ const screen = blessed.screen({
     height: '35%' // 화면 높이 35%
 });
 
+// 화면 중앙에 텍스트를 표시하는 박스 생성
+const box = blessed.box({
+    top: 'center',
+    left: 'center',
+    width: '100%',
+    height: '100%',
+    content: '', // 초기 텍스트
+    tags: true,
+    border: {
+        type: 'line'
+    },
+    style: {
+        fg: '#FFFFFF', // 흰색 글자
+        bg: '#000080', // 진한 파랑 배경
+        border: {
+            fg: '#FFFFFF' // 흰색 테두리
+        }
+    }
+});
+
+// 박스를 화면에 추가
+screen.append(box);
+
